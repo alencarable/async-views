@@ -1,0 +1,1440 @@
+Last login: Fri Dec 30 08:44:36 on ttys005
+(base) alencarable@MacBook-Pro-de-Pedro modulo11 % mkdir async-views
+(base) alencarable@MacBook-Pro-de-Pedro modulo11 % cd async-views
+(base) alencarable@MacBook-Pro-de-Pedro async-views % python3 -m venv env
+(base) alencarable@MacBook-Pro-de-Pedro async-views % source env/bin/activate
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % python --version
+Python 3.9.7
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % pip install django
+Collecting django
+  Downloading Django-4.1.4-py3-none-any.whl (8.1 MB)
+     |████████████████████████████████| 8.1 MB 1.6 MB/s 
+Collecting sqlparse>=0.2.2
+  Downloading sqlparse-0.4.3-py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 7.6 MB/s 
+Collecting asgiref<4,>=3.5.2
+  Downloading asgiref-3.6.0-py3-none-any.whl (23 kB)
+Installing collected packages: sqlparse, asgiref, django
+Successfully installed asgiref-3.6.0 django-4.1.4 sqlparse-0.4.3
+WARNING: You are using pip version 21.2.3; however, version 22.3.1 is available.
+You should consider upgrading via the '/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/bin/python3 -m pip install --upgrade pip' command.
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % django-admin startproject asyncviews .
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % ls
+asyncviews	env		manage.py
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % cd
+(env) (base) alencarable@MacBook-Pro-de-Pedro ~ % python3 manage.py migrate
+python3: can't open file '/Users/alencarable/manage.py': [Errno 2] No such file or directory
+(env) (base) alencarable@MacBook-Pro-de-Pedro ~ % cd async-views
+cd: no such file or directory: async-views
+(env) (base) alencarable@MacBook-Pro-de-Pedro ~ % ls
+AndroidStudioProjects	Dropbox			Pictures
+Applications		Library			Public
+Desktop			Movies			opt
+Documents		Music
+Downloads		OneDrive
+(env) (base) alencarable@MacBook-Pro-de-Pedro ~ % cd /Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 30, 2022 - 11:50:33
+Django version 4.1.4, using settings 'asyncviews.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 30, 2022 - 11:51:01
+Django version 4.1.4, using settings 'asyncviews.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[30/Dec/2022 11:51:09] "GET / HTTP/1.1" 200 10681
+[30/Dec/2022 11:51:09] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[30/Dec/2022 11:51:09] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[30/Dec/2022 11:51:09] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+Not Found: /favicon.ico
+[30/Dec/2022 11:51:09] "GET /favicon.ico HTTP/1.1" 404 2114
+/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/commands/runserver.py", line 132, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/base.py", line 544, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+?: (urls.E004) Your URL pattern functools.partial(<function _path at 0x7fdd207ece50>, Pattern=<class 'django.urls.resolvers.RoutePattern'>) is invalid. Ensure that urlpatterns is a list of path() and/or re_path() instances.
+
+System check identified 1 issue (0 silenced).
+/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/commands/runserver.py", line 132, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/base.py", line 473, in check
+    all_issues = checks.run_checks(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 490, in check
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py", line 21, in <module>
+    path()
+TypeError: _path() missing 2 required positional arguments: 'route' and 'view'
+/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/commands/runserver.py", line 132, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/base.py", line 473, in check
+    all_issues = checks.run_checks(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 490, in check
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py", line 21, in <module>
+    path('api')
+TypeError: _path() missing 1 required positional argument: 'view'
+/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/commands/runserver.py", line 132, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/base.py", line 473, in check
+    all_issues = checks.run_checks(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 490, in check
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py", line 21, in <module>
+    path('api/')
+TypeError: _path() missing 1 required positional argument: 'view'
+/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/commands/runserver.py", line 132, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/base.py", line 473, in check
+    all_issues = checks.run_checks(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 490, in check
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py", line 21, in <module>
+    path('api/', views.api)
+NameError: name 'views' is not defined
+/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/commands/runserver.py", line 132, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/base.py", line 473, in check
+    all_issues = checks.run_checks(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 490, in check
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py", line 22, in <module>
+    path('api/', views.api)
+NameError: name 'views' is not defined
+/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/commands/runserver.py", line 132, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/management/base.py", line 473, in check
+    all_issues = checks.run_checks(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 490, in check
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py", line 18
+    from .
+          ^
+SyntaxError: invalid syntax
+/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/asyncviews/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 30, 2022 - 11:56:28
+Django version 4.1.4, using settings 'asyncviews.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+^C%                                                                             (env) (base) alencarable@MacBook-Pro-de-Pedro async-views % python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 30, 2022 - 11:56:49
+Django version 4.1.4, using settings 'asyncviews.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Not Found: /
+[30/Dec/2022 11:57:04] "GET / HTTP/1.1" 404 2167
+[30/Dec/2022 11:57:17] "GET /api HTTP/1.1" 301 0
+[30/Dec/2022 11:57:18] "GET /api/ HTTP/1.1" 200 26
+^C%                                                                             (env) (base) alencarable@MacBook-Pro-de-Pedro async-views % pip install uvicorn
+Collecting uvicorn
+  Downloading uvicorn-0.20.0-py3-none-any.whl (56 kB)
+     |████████████████████████████████| 56 kB 1.2 MB/s 
+Collecting click>=7.0
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+     |████████████████████████████████| 96 kB 4.6 MB/s 
+Collecting h11>=0.8
+  Using cached h11-0.14.0-py3-none-any.whl (58 kB)
+Installing collected packages: h11, click, uvicorn
+Successfully installed click-8.1.3 h11-0.14.0 uvicorn-0.20.0
+WARNING: You are using pip version 21.2.3; however, version 22.3.1 is available.
+You should consider upgrading via the '/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/bin/python3 -m pip install --upgrade pip' command.
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % uvicorn --reload asyncviews.asgi:application 
+INFO:     Will watch for changes in these directories: ['/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1760] using StatReload
+INFO:     Started server process [1762]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:49383 - "GET /api/ HTTP/1.1" 200 OK
+^CINFO:     Shutting down
+INFO:     Finished server process [1762]
+INFO:     Stopping reloader process [1760]
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % uvicorn --reload asyncviews.asgi:application
+INFO:     Will watch for changes in these directories: ['/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1819] using StatReload
+INFO:     Started server process [1821]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 229, in _get_response_async
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 305, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/deprecation.py", line 149, in __acall__
+    response = response or await self.get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 488, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 138, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 179, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 63, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 393, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 378, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 96, in get_caller
+    resolver_match = resolve(request.path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/deprecation.py", line 149, in __acall__
+    response = response or await self.get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 488, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 138, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 179, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 63, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 393, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 378, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 96, in get_caller
+    resolver_match = resolve(request.path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/deprecation.py", line 149, in __acall__
+    response = response or await self.get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 488, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 138, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 179, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 63, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 393, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 378, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 96, in get_caller
+    resolver_match = resolve(request.path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/deprecation.py", line 149, in __acall__
+    response = response or await self.get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 488, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 138, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 179, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 63, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 393, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 378, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 96, in get_caller
+    resolver_match = resolve(request.path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/deprecation.py", line 149, in __acall__
+    response = response or await self.get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 488, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 138, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 179, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 63, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 393, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 378, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 96, in get_caller
+    resolver_match = resolve(request.path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/deprecation.py", line 149, in __acall__
+    response = response or await self.get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 488, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 138, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 179, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 63, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 393, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 378, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 96, in get_caller
+    resolver_match = resolve(request.path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/deprecation.py", line 149, in __acall__
+    response = response or await self.get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 488, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 138, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 179, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 63, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 393, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 378, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 96, in get_caller
+    resolver_match = resolve(request.path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/asgi.py", line 155, in __call__
+    await self.handle(scope, receive, send)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/asgi.py", line 178, in handle
+    response = await self.get_response_async(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 156, in get_response_async
+    response = await self._middleware_chain(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 44, in inner
+    response = await sync_to_async(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 488, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 138, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 179, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 63, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 393, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 378, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/views/debug.py", line 96, in get_caller
+    resolver_match = resolve(request.path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 659, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 711, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/urls/resolvers.py", line 704, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/urls.py", line 18, in <module>
+    from . import views
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'
+INFO:     127.0.0.1:53402 - "GET /api/ HTTP/1.1" 500 Internal Server Error
+^CINFO:     Shutting down
+INFO:     Finished server process [1821]
+INFO:     Stopping reloader process [1819]
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % pip install httpx
+Collecting httpx
+  Downloading httpx-0.23.1-py3-none-any.whl (84 kB)
+     |████████████████████████████████| 84 kB 1.3 MB/s 
+Collecting rfc3986[idna2008]<2,>=1.3
+  Downloading rfc3986-1.5.0-py2.py3-none-any.whl (31 kB)
+Collecting sniffio
+  Downloading sniffio-1.3.0-py3-none-any.whl (10 kB)
+Collecting httpcore<0.17.0,>=0.15.0
+  Downloading httpcore-0.16.3-py3-none-any.whl (69 kB)
+     |████████████████████████████████| 69 kB 17.7 MB/s 
+Collecting certifi
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     |████████████████████████████████| 155 kB 18.5 MB/s 
+Requirement already satisfied: h11<0.15,>=0.13 in ./env/lib/python3.9/site-packages (from httpcore<0.17.0,>=0.15.0->httpx) (0.14.0)
+Collecting anyio<5.0,>=3.0
+  Downloading anyio-3.6.2-py3-none-any.whl (80 kB)
+     |████████████████████████████████| 80 kB 21.6 MB/s 
+Collecting idna>=2.8
+  Downloading idna-3.4-py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 665 kB/s 
+Installing collected packages: sniffio, idna, rfc3986, certifi, anyio, httpcore, httpx
+Successfully installed anyio-3.6.2 certifi-2022.12.7 httpcore-0.16.3 httpx-0.23.1 idna-3.4 rfc3986-1.5.0 sniffio-1.3.0
+WARNING: You are using pip version 21.2.3; however, version 22.3.1 is available.
+You should consider upgrading via the '/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/bin/python3 -m pip install --upgrade pip' command.
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % uvicorn --reload asyncviews.asgi:application
+INFO:     Will watch for changes in these directories: ['/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1867] using StatReload
+INFO:     Started server process [1869]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+^CINFO:     Shutting down
+INFO:     Finished server process [1869]
+INFO:     Stopping reloader process [1867]
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % uvicorn --reload asyncviews.asgi:application
+INFO:     Will watch for changes in these directories: ['/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1888] using StatReload
+INFO:     Started server process [1890]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:54060 - "GET /api/ HTTP/1.1" 200 OK
+1
+2
+3
+4
+5
+Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<http_call_async() done, defined at /Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py:19> exception=ConnectError('[Errno 8] nodename nor servname provided, or not known')>
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/anyio/_core/_sockets.py", line 186, in connect_tcp
+    addr_obj = ip_address(remote_host)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/ipaddress.py", line 53, in ip_address
+    raise ValueError('%r does not appear to be an IPv4 or IPv6 address' %
+ValueError: 'htttpbin.org' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/anyio/_core/_sockets.py", line 189, in connect_tcp
+    gai_res = await getaddrinfo(
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 24, in http_call_async
+    r = await client.get("https://htttpbin.org")
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_client.py", line 1757, in get
+    return await self.request(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1890]
+INFO:     Started server process [1900]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+^[[A^CINFO:     Shutting down
+INFO:     Finished server process [1900]
+INFO:     Stopping reloader process [1888]
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % uvicorn --reload asyncviews.asgi:application
+INFO:     Will watch for changes in these directories: ['/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1907] using StatReload
+INFO:     Started server process [1909]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:54458 - "GET /api/ HTTP/1.1" 200 OK
+1
+2
+3
+4
+5
+<Response [200 OK]>
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1909]
+INFO:     Started server process [1943]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1943]
+INFO:     Started server process [1947]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1947]
+INFO:     Started server process [1948]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1948]
+INFO:     Started server process [1949]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1949]
+INFO:     Started server process [1951]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1951]
+INFO:     Started server process [1953]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1953]
+INFO:     Started server process [1954]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1954]
+INFO:     Started server process [1955]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1955]
+INFO:     Started server process [1957]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1957]
+INFO:     Started server process [1958]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1958]
+INFO:     Started server process [1960]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1960]
+INFO:     Started server process [1961]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1961]
+INFO:     Started server process [1962]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1962]
+INFO:     Started server process [1966]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1966]
+INFO:     Started server process [1967]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1967]
+INFO:     Started server process [1968]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1968]
+INFO:     Started server process [1969]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1969]
+INFO:     Started server process [1970]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1970]
+INFO:     Started server process [1972]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1972]
+INFO:     Started server process [1973]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1973]
+INFO:     Started server process [1974]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1974]
+INFO:     Started server process [1975]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1975]
+INFO:     Started server process [1976]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1976]
+INFO:     Started server process [1977]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1977]
+INFO:     Started server process [1978]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1978]
+INFO:     Started server process [1979]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1979]
+INFO:     Started server process [1980]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1980]
+INFO:     Started server process [1982]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1982]
+INFO:     Started server process [1983]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1983]
+INFO:     Started server process [1984]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1984]
+INFO:     Started server process [1985]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1985]
+INFO:     Started server process [1988]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1988]
+INFO:     Started server process [1991]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1991]
+INFO:     Started server process [1992]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1992]
+INFO:     Started server process [1993]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1993]
+INFO:     Started server process [1994]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1994]
+INFO:     Started server process [1995]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1995]
+INFO:     Started server process [1996]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1996]
+INFO:     Started server process [1998]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1998]
+INFO:     Started server process [1999]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/urls.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [1999]
+INFO:     Started server process [2000]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57438 - "GET /async/ HTTP/1.1" 200 OK
+1
+2
+3
+4
+5
+<Response [200 OK]>
+Internal Server Error: /sync/
+Traceback (most recent call last):
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/django/core/handlers/base.py", line 247, in _get_response_async
+    response = await wrapped_callback(
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/asyncio/tasks.py", line 442, in wait_for
+    return await fut
+  File "/Users/alencarable/opt/anaconda3/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/env/lib/python3.9/site-packages/asgiref/sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 40, in sync_view
+    http_call_sync()
+  File "/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views/./asyncviews/views.py", line 29, in http_call_sync
+    sleep(1)
+NameError: name 'sleep' is not defined
+INFO:     127.0.0.1:57548 - "GET /sync/ HTTP/1.1" 500 Internal Server Error
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [2000]
+INFO:     Started server process [2012]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [2012]
+INFO:     Started server process [2016]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [2016]
+INFO:     Started server process [2017]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [2017]
+INFO:     Started server process [2018]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [2018]
+INFO:     Started server process [2022]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'asyncviews/views.py'. Reloading...
+INFO:     Shutting down
+INFO:     Finished server process [2022]
+INFO:     Started server process [2023]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+^CINFO:     Shutting down
+INFO:     Finished server process [2023]
+INFO:     Stopping reloader process [1907]
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % uvicorn --reload asyncviews.asgi:application
+INFO:     Will watch for changes in these directories: ['/Users/alencarable/Dropbox/cursos_online/ebac/dev-fullstack/back-endPython/modulo11/async-views']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [2027] using StatReload
+INFO:     Started server process [2029]
+INFO:     Waiting for application startup.
+INFO:     ASGI 'lifespan' protocol appears unsupported.
+INFO:     Application startup complete.
+1
+2
+3
+4
+5
+<Response [200 OK]>
+INFO:     127.0.0.1:59032 - "GET /sync/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59601 - "GET /sync HTTP/1.1" 301 Moved Permanently
+1
+2
+3
+4
+5
+<Response [200 OK]>
+INFO:     127.0.0.1:59601 - "GET /sync/ HTTP/1.1" 200 OK
+^CINFO:     Shutting down
+INFO:     Finished server process [2029]
+INFO:     Stopping reloader process [2027]
+(env) (base) alencarable@MacBook-Pro-de-Pedro async-views % 
+
